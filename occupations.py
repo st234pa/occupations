@@ -13,5 +13,6 @@ def select():
         total += d[k]
         if random.random() * total < d[k]:
             return d.keys(k)
-
-print(select())
+for i in d:
+    print(d.keys(i), d.values(i))
+#print(select())

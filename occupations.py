@@ -1,6 +1,7 @@
 #Shariar & Steph
-#Hw 2
+#HW 2
 #9/15/16
+#Softdev Period 9
 import random
 import csv
 

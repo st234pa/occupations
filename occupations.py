@@ -1,16 +1,48 @@
-import csv
+#Shariar & Steph
+#Hw 2
+#9/15/16
 import random
+import csv
 
-reader = csv.reader(open('occupations.csv', 'r'))
-d = {}
-for row in reader:
-    k, v = row
-    float(d[k]) = v
-  
+d={}
+occu=[]
+perc=[]
+total=[]
+
+
+#Make the dict
+def createDict():
+    data = open('occupations.csv', 'r')
+    reader = csv.reader(data)
+    for row in reader:
+        if row[0] != 'Job Class' and  row[0] != 'Total':
+            occu.append(row[0])
+            perc.append(float(row[1]))
+            d[row[0]]=float(row[1])
+    data.close()
+
+
+#adds onto a running total,
+#if thet keys value makes it greater then randomnum
+#it returns the key
+    
 def select():
-    total = 0
-    for k in d:
-        total += d[k]
-        if random.random() * total < d[k]:
-            print (k, d[k])
-select()
+    randomnum= random.random()*99.8
+    total=0.00
+    x=0
+    print randomnum
+    for key in d:
+        
+        total+=d[key]
+        print total
+        
+        if randomnum<total:
+            return key
+        
+        
+     
+
+createDict()
+print select()
+
+
